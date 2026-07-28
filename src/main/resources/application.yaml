@@ -1,6 +1,17 @@
 spring:
   application:
     name: payment-platform
+  datasource:
+    url: jdbc:postgresql://localhost:5432/payment_platform
+    username: payment_user
+    password: payment_pass
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
+    open-in-view: false
 
 server:
   port: 8080
