@@ -24,6 +24,11 @@ public class User {
         this.updatedAt = updatedAt;
     }
 
+    public static User createNew(String fullName, String email, String document) {
+        OffsetDateTime now = OffsetDateTime.now();
+        return new User(UUID.randomUUID(), fullName, email, document, UserStatus.ACTIVE, now, now);
+    }
+
     public UUID getId() {
         return id;
     }
